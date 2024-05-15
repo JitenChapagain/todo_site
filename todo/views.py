@@ -23,6 +23,7 @@ def index(request):
 
 def remove(request, item_id):
     item =Todo.objects.get(id=item_id)
+    a=item.title
     item.delete()
-    messages.info(request,"item removed !!!!!!")
+    messages.info(request,a+ "removed !!!!!!")
     return redirect('todo')
